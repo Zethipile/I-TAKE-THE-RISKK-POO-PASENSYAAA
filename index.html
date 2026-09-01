@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>RUIN THE FRIENDSHIPP!</title>
+</head>
+<body>
+     
+     <h1>Hello! 👋</h1>
+     <h2>I know it sounds weird but i have something to say.. </h2>
+     <h3>uhmm.. i likee youu po😓 </h3>
+     <h4>so.. do you likee me too?🫣
+     
+     <button onclick="alert('YOWNN!😍')">YESS 😍</button>
+     <button onclick="alert('ARAY KO POO🫠')">No,whyy😔</button>
+      
+     <h5>THANK YOU FOR BEING HONEST!💖</h5>
+    
+    <button onclick="sendAnswer('YESS! 😍')">Yes ❤️</button>
+<button onclick="sendAnswer('NO 😭')">No 😭</button>
+
+<script>
+function sendAnswer(answer) {
+    const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSe4H98jrHTKFG7v8FKX3cbcbiOcVSgujlYN-4gY53y2x1A5fQ/formResponse";
+
+    const formData = new FormData();
+    formData.append("entry.1325266230", answer);
+
+    fetch(formURL, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData
+    });
+
+    alert("Answer sent! ❤️");
+}
+</script>
+</body>
+</html>
