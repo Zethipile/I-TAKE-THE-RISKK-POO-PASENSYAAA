@@ -17,25 +17,26 @@
         susubukan ay hinde ko malalaman kung ano ang mga pwedeng mangyari. Para sa huli gusto ko lang malaman kung ano ang
         nararamdaman mo din para sakin. Maraming salamat pooo😊
     
-<button onclick="sendAnswer('YESS! 😍')">Yes ❤️</button>
+<button onclick="sendAnswer('YESS!😍')">Yes ❤️</button>
 <button onclick="sendAnswer('NO 😭')">No 😭</button>
     <p>THANK YOU FOR BEING HONEST!💖</p>
 
 <script>
         function sendAnswer(answer) {
-            const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSfdIutjsAeq16Bqo8Y7TpvJp9J90g8tUNLHbyET3b6oNTbbSA/viewform?usp=pp_url&entry.95804004=" + encodeURIComponent(answer);
-            const formData = new FormData();
-            formData.append("entry.95804004", answer);
+    const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSfdIutjsAeq16Bqo8Y7TpvJp9J90g8tUNLHbyET3b6oNTbbSA/formResponse";
 
-            fetch(formURL, {
-                method: "POST",
-                mode: "no-cors",
-                body: formData
-            });
+    const formData = new FormData();
+    formData.append("entry.95804004", answer);
 
-            alert("Thank you! 💗");
-        }
+    fetch(formURL, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData
+    });
+
+    alert("Thank you! 💗");
+}
     </script>
 
 </body>
-</htmml>
+</html>
