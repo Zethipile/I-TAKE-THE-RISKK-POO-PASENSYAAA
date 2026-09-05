@@ -20,23 +20,23 @@
 <button onclick="sendAnswer('YESS! 😍')">Yes ❤️</button>
 <button onclick="sendAnswer('NO 😭')">No 😭</button>
     <p>THANK YOU FOR BEING HONEST!💖</p>
-<form id="answerForm"
-      action= https://docs.google.com/forms/d/e/1FAIpQLSe4H98jrHTKFG7v8FKX3cbcbiOcVSgujlYN-4gY53y2x1A5fQ/viewform?usp=pp_url&entry.1325266230=YESS!%F0%9F%98%8D
-      method="POST"
-      target="hiddenFrame">
-
-    <input type="hidden" name="entry.1325266230" id="answer">
-</form>
-
-<iframe name="hiddenFrame" style="display:none;"></iframe>
 
 <script>
-function sendAnswer(answer) {
-    document.getElementById("answer").value = answer;
-    document.getElementById("answerForm").submit();
+        function sendAnswer(answer) {
+            const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSe4H98jrHTKFG7v8FKX3cbcbiOcVSgujlYN-4gY53y2x1A5fQ/viewform?usp=pp_url&entry.1325266230=" + encodeURIComponent(answer);
 
-    alert("Answer sent! ❤️");
-}
-</script 
+            const formData = new FormData();
+            formData.append("entry.1325266230", answer);
+
+            fetch(formURL, {
+                method: "POST",
+                mode: "no-cors",
+                body: formData
+            });
+
+            alert("Thank you! 💗");
+        }
+    </script>
+
 </body>
-</html>
+</htmml>
