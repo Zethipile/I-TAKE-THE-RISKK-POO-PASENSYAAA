@@ -31,9 +31,14 @@
     position: absolute;
     bottom: -50px;
     color: lightpink;
-    font-size: 25px;
+    font-size: 50px;
     animation: floatUp 6s linear infinite;
     opacity: 0.7;
+}
+@media (max-width:  600px) {
+    .heart {
+        font-size: 65px;   
+    }
 }
 
 @keyframes floatUp {
@@ -109,7 +114,7 @@ function createHeart() {
     heart.innerHTML = "♥";
 
     heart.style.left = Math.random() * 100 + "%";
-    heart.style.fontSize = (100 + Math.random() * 70) + "px";
+    heart.style.fontSize = (50 + Math.random() * 50) + "px";
     heart.style.animationDuration = (4 + Math.random() * 5) + "s";
 
     heartsContainer.appendChild(heart);
